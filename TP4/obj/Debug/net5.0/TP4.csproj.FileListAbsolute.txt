@@ -1,0 +1,9 @@
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.csproj.AssemblyReference.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.GeneratedMSBuildEditorConfig.editorconfig
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.AssemblyInfoInputs.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.AssemblyInfo.cs
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.csproj.CoreCompileInputs.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.MvcApplicationPartsAssemblyInfo.cs
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.MvcApplicationPartsAssemblyInfo.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.RazorAssemblyInfo.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.RazorAssemblyInfo.cs

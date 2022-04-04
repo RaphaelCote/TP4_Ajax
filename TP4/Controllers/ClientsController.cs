@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 using TP4.Data;
 using TP4.Models;
 using TP4.ViewModels;
@@ -12,6 +14,7 @@ namespace TP4.Controllers
     public class ClientsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        public List<SelectListItem> ListeAbonnements;
         public ClientsController(ApplicationDbContext context)
         {
             _context = context;
@@ -26,22 +29,32 @@ namespace TP4.Controllers
         // GET: ClientsController/Create
         public ActionResult Create()
         {
-            return View();
+            foreach (Abonnement a in _context.Abonnements)
+            {
+                ListeAbonnements.Add(new SelectListItem()
+                {
+                    Value = a.AbonnementId.ToString(),
+                    Text = a.Type,
+
+                });
+            }
+            ClientCreateVM client = new()
+            {
+                ListesAbonnement = ListeAbonnements
+            };
+            return PartialView("_CreatePartial", client);
         }
 
         // POST: ClientsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ClientCreateVM nouveauClient)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                Client clientACreer = new();
             }
-            catch
-            {
-                return View();
-            }
+            return PartialView("_ClientsListePartial");
         }
 
         // GET: ClientsController/Edit/5

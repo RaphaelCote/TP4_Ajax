@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 using TP4.Data;
 using TP4.Models;
 using TP4.ViewModels;
@@ -57,33 +55,13 @@ namespace TP4.Controllers
             return PartialView("_ClientsListePartial");
         }
 
-        // GET: ClientsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ClientsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
 
             _context.Clients.Remove(_context.Clients.FirstOrDefault(c => c.ClientId == id));
+            _context.SaveChanges();
 
             return PartialView("_ClientsListPartial", GetClientsVM());
         }

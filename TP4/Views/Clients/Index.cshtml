@@ -1,8 +1,10 @@
+@model List<TP4.ViewModels.ClientsIndexVM>
+
 <h1>Clients</h1>
 
 
 <button class="btn btn-primary" onclick="afficherFormulaire()">Créer un client</button>
 <div id="formulaire"></div>
 <div id="clientsList">
-
+    <partial name="_ClientsListPartial" model="@Model" />
 </div>

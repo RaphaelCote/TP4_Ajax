@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4", "TP4.csproj", "{4F071965-8A52-4EC1-9A5E-36021C828A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP4", "TP4.csproj", "{4F071965-8A52-4EC1-9A5E-36021C828A60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seeder", "..\Seeder\Seeder.csproj", "{C51E5A64-2ABE-4B94-99AF-098D9F630E26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4F071965-8A52-4EC1-9A5E-36021C828A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F071965-8A52-4EC1-9A5E-36021C828A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F071965-8A52-4EC1-9A5E-36021C828A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51E5A64-2ABE-4B94-99AF-098D9F630E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51E5A64-2ABE-4B94-99AF-098D9F630E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51E5A64-2ABE-4B94-99AF-098D9F630E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51E5A64-2ABE-4B94-99AF-098D9F630E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

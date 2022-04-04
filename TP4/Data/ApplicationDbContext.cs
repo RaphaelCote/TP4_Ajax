@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TP4.Models;
 
-namespace TP3.Data
+namespace TP4.Data
 {
     public class ApplicationDbContext : DbContext
     {

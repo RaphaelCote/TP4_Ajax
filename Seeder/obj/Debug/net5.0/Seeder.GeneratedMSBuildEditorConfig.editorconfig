@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Seeder
-build_property.ProjectDir = C:\-DEV-H22_ProgWeb2\TP4_Ajax\Seeder\
+build_property.ProjectDir = C:\ProgWeb2\TP4\TP4_Ajax\Seeder\

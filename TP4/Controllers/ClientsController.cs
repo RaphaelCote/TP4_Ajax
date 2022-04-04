@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 using TP4.Data;
 using TP4.Models;
 using TP4.ViewModels;
@@ -52,9 +51,20 @@ namespace TP4.Controllers
         {
             if (ModelState.IsValid)
             {
-                Client clientACreer = new();
+                Client clientACreer = new()
+                {
+                    ClientId = 0,
+                    Nom = nouveauClient.Nom,
+                    Age = nouveauClient.Age,
+                    NoTelephone = nouveauClient.NumeroTelephone,
+                    Courriel = nouveauClient.Courriel,
+                    AbonnementId = nouveauClient.TypeAbonnementId
+                };
+
+                _context.Clients.Add(clientACreer);
+                _context.SaveChanges();
             }
-            return PartialView("_ClientsListePartial");
+            return PartialView("_ClientsListePartial", GetClientsVM());
         }
 
         // GET: ClientsController/Edit/5

@@ -1,6 +1,9 @@
 ﻿function annulerCreation() {
     let contenuFormulaire = document.getElementById("formulaire");
     contenuFormulaire.innerHTML = "";
+
+    let boutonCreer = document.getElementById("btnCreer");
+    boutonCreer.disabled = true;
 }
 
 // Write your JavaScript code.
@@ -9,6 +12,8 @@
 function deleteClient(clientId) {}
 
 function afficherFormulaire() {
+    let boutonCreer = document.getElementById("btnCreer");
+    boutonCreer.disabled = true;
     fetch("/Clients/Create").then(function (response) {
         if (response.ok) {
             response.text().then(function (data) {
@@ -46,5 +51,6 @@ function creerClient(ev) {
             throw Error(response);
         }
         return response.json();
+        annulerCreation();
     });
 }

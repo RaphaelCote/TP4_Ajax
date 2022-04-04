@@ -67,33 +67,13 @@ namespace TP4.Controllers
             return PartialView("_ClientsListePartial", GetClientsVM());
         }
 
-        // GET: ClientsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ClientsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
 
             _context.Clients.Remove(_context.Clients.FirstOrDefault(c => c.ClientId == id));
+            _context.SaveChanges();
 
             return PartialView("_ClientsListPartial", GetClientsVM());
         }

@@ -1,0 +1,58 @@
+﻿@model List<TP4.ViewModels.ClientsIndexVM>
+
+@if (Model.Count() <= 0)
+{
+    <p>Aucun résultat</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().Courriel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().NoTelephone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TypeAbonnement)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Courriel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoTelephone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeAbonnement)
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" onclick="deleteClient(@item.ClientId)">Supprimer</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

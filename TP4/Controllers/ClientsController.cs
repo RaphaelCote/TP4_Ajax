@@ -1,24 +1,26 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using TP4.Data;
+using TP4.Models;
+using TP4.ViewModels;
 
 namespace TP4.Controllers
 {
     public class ClientsController : Controller
     {
-        // GET: ClientsController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _context;
+        public ClientsController(ApplicationDbContext context)
         {
-            return View();
+            _context = context;
         }
 
-        // GET: ClientsController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Index()
         {
-            return View();
+
+            return View(GetClientsVM());
         }
 
         // GET: ClientsController/Create
@@ -63,25 +65,36 @@ namespace TP4.Controllers
             }
         }
 
-        // GET: ClientsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ClientsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id)
         {
-            try
+
+            _context.Clients.Remove(_context.Clients.FirstOrDefault(c => c.ClientId == id));
+
+            return PartialView("_ClientsListPartial", GetClientsVM());
+        }
+
+        public List<ClientsIndexVM> GetClientsVM()
+        {
+            List<Client> Clients = _context.Clients.Include("Abonnement").ToList();
+
+            List<ClientsIndexVM> ClientsVM = new List<ClientsIndexVM>();
+
+            foreach (Client c in Clients)
             {
-                return RedirectToAction(nameof(Index));
+                ClientsVM.Add(new ClientsIndexVM()
+                {
+                    ClientId = c.ClientId,
+                    Nom = c.Nom,
+                    Age = c.Age,
+                    Courriel = c.Courriel,
+                    NoTelephone = c.NoTelephone,
+                    TypeAbonnement = c.Abonnement.Type
+                });
             }
-            catch
-            {
-                return View();
-            }
+
+            return ClientsVM;
         }
     }
 }

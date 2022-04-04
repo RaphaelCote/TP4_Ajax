@@ -387,3 +387,4 @@ C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.dll
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\ref\TP4.dll
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.pdb
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.genruntimeconfig.cache
+C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\Index.cshtml.g.cs

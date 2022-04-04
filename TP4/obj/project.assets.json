@@ -8023,19 +8023,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ripgo\\.nuget\\packages\\": {}
+    "C:\\Users\\Charles-Antoine\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj",
+      "projectUniqueName": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj",
       "projectName": "TP4",
-      "projectPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj",
-      "packagesPath": "C:\\Users\\ripgo\\.nuget\\packages\\",
-      "outputPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\obj\\",
+      "projectPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj",
+      "packagesPath": "C:\\Users\\Charles-Antoine\\.nuget\\packages\\",
+      "outputPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ripgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Charles-Antoine\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

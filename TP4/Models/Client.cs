@@ -17,6 +17,9 @@ namespace TP4.Models
 
         [Required]
         public string NoTelephone { get; set; }
+
+        [Required]
+        public int AbonnementId { get; set; }
         public Abonnement Abonnement { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace TP4.ViewModels
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (NumeroTelephone != null && NumeroTelephone.Length < 10)
+            if (!NumeroTelephone.Equals("") && NumeroTelephone.Length < 10)
             {
                 yield return new ValidationResult($"Le numéro de téléphone doit contenir 10 chiffres.");
             }

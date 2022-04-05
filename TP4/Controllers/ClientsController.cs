@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -26,8 +25,10 @@ namespace TP4.Controllers
         }
 
         // GET: ClientsController/Create
+        [HttpGet]
         public ActionResult Create()
         {
+            ListeAbonnements = new();
             foreach (Abonnement a in _context.Abonnements)
             {
                 ListeAbonnements.Add(new SelectListItem()
@@ -47,7 +48,7 @@ namespace TP4.Controllers
         // POST: ClientsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ClientCreateVM nouveauClient)
+        public ActionResult Create([FromBody] ClientCreateVM nouveauClient)
         {
             if (ModelState.IsValid)
             {
@@ -63,8 +64,11 @@ namespace TP4.Controllers
 
                 _context.Clients.Add(clientACreer);
                 _context.SaveChanges();
+
+                return View();
             }
-            return PartialView("_ClientsListePartial", GetClientsVM());
+
+            return NotFound(404);
         }
 
         [HttpPost]

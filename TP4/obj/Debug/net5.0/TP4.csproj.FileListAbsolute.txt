@@ -779,3 +779,6 @@ C:\ProgWeb2\TP4\TP4_Ajax\TP4\obj\Debug\net5.0\TP4.genruntimeconfig.cache
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\Index.cshtml.g.cs
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\_ClientsListPartial.cshtml.g.cs
 C:\-DEV-H22_ProgWeb2\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\_CreatePartial.cshtml.g.cs
+C:\ProgWeb2\TP4\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\Index.cshtml.g.cs
+C:\ProgWeb2\TP4\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\_ClientsListPartial.cshtml.g.cs
+C:\ProgWeb2\TP4\TP4_Ajax\TP4\obj\Debug\net5.0\Razor\Views\Clients\_CreatePartial.cshtml.g.cs

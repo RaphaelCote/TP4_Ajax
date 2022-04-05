@@ -3,7 +3,7 @@
     contenuFormulaire.innerHTML = "";
 
     let boutonCreer = document.getElementById("btnCreer");
-    boutonCreer.disabled = true;
+    boutonCreer.disabled = false;
 }
 
 // Write your JavaScript code.
@@ -14,10 +14,13 @@ function deleteClient(clientId) {}
 function afficherFormulaire() {
     let boutonCreer = document.getElementById("btnCreer");
     boutonCreer.disabled = true;
+    let contenuFormulaire = document.getElementById("formulaire");
+    
+    
     fetch("/Clients/Create").then(function (response) {
         if (response.ok) {
             response.text().then(function (data) {
-                reponse4.innerHTML = data;
+                contenuFormulaire.innerHTML = data;
             });
         } 
     });

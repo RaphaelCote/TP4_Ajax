@@ -24,20 +24,22 @@
     </div>
     <div class="col-md-4">
         <label asp-for="TypeAbonnementId" class="form-label"></label>
+        <select class="form-control" asp-for="TypeAbonnementId" asp-items="Model.ListesAbonnement">
+            <option value="">Choisir un abonnement</option>
+        </select>
+        <span asp-validation-for="TypeAbonnementId" class="text-danger"></span>
     </div>
-    <select class="form-control" asp-for="TypeAbonnementId" asp-items="Model.ListesAbonnement">
-        <option value="">Choisir un abonnement</option>
-    </select>
-    <span asp-validation-for="TypeAbonnementId" class="text-danger"></span>
-
-    <button class="btn btn-info" onclick="creerClient()" type="submit">Sauvegarder</button>
-    <button class="btn btn-danger" onclick="annulerCreation()">Annuler</button>
 </form>
+<div class="col-md-12 mt-3">
+    <button class="btn btn-info" onclick="creerClient(this)">Sauvegarder</button>
+    <button class="btn btn-danger" onclick="annulerCreation()">Annuler</button>
+</div>
+<br />
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        <script src="~/js/site.js"></script>
     }
+    <script src="~/js/site.js"></script>
 }
 

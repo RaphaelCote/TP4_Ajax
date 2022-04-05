@@ -26,6 +26,8 @@ function afficherFormulaire() {
     });
 }
 
+
+
 function creerClient(ev) {
     var form = ev.target.closest("form");
     var data = new FormData(form);

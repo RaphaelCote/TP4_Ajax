@@ -72,6 +72,7 @@ namespace TP4.Controllers
         }
 
         [HttpPost]
+        [Route("{controller}/{action}/{id}")]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {

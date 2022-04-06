@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProgWeb2\\TP4\\TP4_Ajax\\Seeder\\Seeder.csproj": {}
+    "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\Seeder\\Seeder.csproj": {}
   },
   "projects": {
-    "C:\\ProgWeb2\\TP4\\TP4_Ajax\\Seeder\\Seeder.csproj": {
+    "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\Seeder\\Seeder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\Seeder\\Seeder.csproj",
+        "projectUniqueName": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\Seeder\\Seeder.csproj",
         "projectName": "Seeder",
-        "projectPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\Seeder\\Seeder.csproj",
-        "packagesPath": "C:\\Users\\Charles-Antoine\\.nuget\\packages\\",
-        "outputPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\Seeder\\obj\\",
+        "projectPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\Seeder\\Seeder.csproj",
+        "packagesPath": "C:\\Users\\ripgo\\.nuget\\packages\\",
+        "outputPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\Seeder\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Charles-Antoine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ripgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj": {
-                "projectPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj"
+              "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj": {
+                "projectPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj"
               }
             }
           }
@@ -72,17 +72,17 @@
         }
       }
     },
-    "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj": {
+    "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj",
+        "projectUniqueName": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj",
         "projectName": "TP4",
-        "projectPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\TP4.csproj",
-        "packagesPath": "C:\\Users\\Charles-Antoine\\.nuget\\packages\\",
-        "outputPath": "C:\\ProgWeb2\\TP4\\TP4_Ajax\\TP4\\obj\\",
+        "projectPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\TP4.csproj",
+        "packagesPath": "C:\\Users\\ripgo\\.nuget\\packages\\",
+        "outputPath": "C:\\-DEV-H22_ProgWeb2\\TP4_Ajax\\TP4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Charles-Antoine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ripgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

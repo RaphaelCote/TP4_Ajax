@@ -6,11 +6,6 @@
     boutonCreer.disabled = false;
 }
 
-// Write your JavaScript code.
-
-
-function deleteClient(clientId) {}
-
 function afficherFormulaire() {
     let boutonCreer = document.getElementById("btnCreer");
     boutonCreer.disabled = true;
@@ -66,4 +61,35 @@ function creerClient(ev) {
         }
         
     });
+}
+
+
+function deleteClient(clientId) {
+    console.log("Clicked !", event);
+    let clientListDiv = document.getElementById("clientsList");
+    let csrfToken = clientListDiv.querySelector('[name="__RequestVerificationToken"]').value;
+    console.log("CSRF : ", csrfToken)
+
+    fetch("/clients/delete/" + clientId, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "RequestVerificationToken": csrfToken, 
+        },
+    }).then(res => {
+        console.log("Res : ", res);
+        if (res.ok) {
+            return res.text()
+        }
+        else {
+            return "Une erreur est survenu"
+        }
+    }).then(res => {
+        afficherListeClient(res);
+    });}
+
+function afficherListeClient(partialView) {
+
+    let divListe = document.getElementById("clientsList");
+    divListe.innerHTML = partialView;
 }

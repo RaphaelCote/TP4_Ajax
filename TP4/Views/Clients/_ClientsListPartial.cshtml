@@ -6,6 +6,8 @@
 }
 else
 {
+    @Html.AntiForgeryToken()
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -43,13 +45,13 @@ else
                         @Html.DisplayFor(modelItem => item.Courriel)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NoTelephone)
+                        @String.Format("{0:(###) ###-####}", Int64.Parse(item.NoTelephone))
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.TypeAbonnement)
                     </td>
                     <td>
-                        <button class="btn btn-danger" onclick="deleteClient(@item.ClientId)">Supprimer</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteClient(@item.ClientId)">Supprimer</button>
                     </td>
                 </tr>
             }

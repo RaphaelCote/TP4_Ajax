@@ -4,14 +4,14 @@
 
 <button class="btn btn-primary mb-3" onclick="afficherFormulaire()" id="btnCreer">Créer un client</button>
 <br />
-<div id="formulaire">
+<div id="formulaireDiv">
 </div>
+<br />
 
 <div id="clientsList">
     <partial name="_ClientsListPartial" model="@Model" />
 </div>
 
 @section scripts{
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script src="~/js/site.js"></script>
 }

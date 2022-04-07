@@ -1,7 +1,7 @@
 ﻿@model ClientCreateVM
 
 
-<form asp-controller="Clients" asp-action="Create" method="post" class="row g-3">
+<form asp-controller="Clients" asp-action="Create" method="post" class="row g-3" id="formulaire">
     <div class="col-md-4">
         <label asp-for="Nom" class="form-label"></label>
         <input asp-for="Nom" class="form-control" />
@@ -29,17 +29,16 @@
         </select>
         <span asp-validation-for="TypeAbonnementId" class="text-danger"></span>
     </div>
+    <div class="col-md-12 mt-3">
+        <button type="button" class="btn btn-info" id="sauvegarder" onclick="creerClient(event)">Sauvegarder</button>
+        <button class="btn btn-danger" onclick="annulerCreation()">Annuler</button>
+    </div>
+
 </form>
-<div class="col-md-12 mt-3">
-    <button class="btn btn-info" id="sauvegarder" onclick="creerClient(event)">Sauvegarder</button>
-    <button class="btn btn-danger" onclick="annulerCreation()">Annuler</button>
-</div>
-<br />
+
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="~/js/site.js"></script>
 }
 

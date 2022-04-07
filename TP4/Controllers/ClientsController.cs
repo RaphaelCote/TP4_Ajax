@@ -59,16 +59,29 @@ namespace TP4.Controllers
                     Age = nouveauClient.Age,
                     NoTelephone = nouveauClient.NumeroTelephone,
                     Courriel = nouveauClient.Courriel,
-                    AbonnementId = nouveauClient.TypeAbonnementId
+                    AbonnementId = (int)nouveauClient.TypeAbonnementId
                 };
 
                 _context.Clients.Add(clientACreer);
                 _context.SaveChanges();
 
-                return View();
+                return PartialView("_ClientsListPartial", GetClientsVM());
             }
 
-            return NotFound(404);
+            ListeAbonnements = new();
+            foreach (Abonnement a in _context.Abonnements)
+            {
+                ListeAbonnements.Add(new SelectListItem()
+                {
+                    Value = a.AbonnementId.ToString(),
+                    Text = a.Type,
+
+                });
+            }
+            nouveauClient.TypeAbonnementId = nouveauClient.TypeAbonnementId;
+            nouveauClient.ListesAbonnement = ListeAbonnements;
+            Response.StatusCode = 400;
+            return PartialView("_CreatePartial", nouveauClient);
         }
 
         [HttpPost]

@@ -102,6 +102,8 @@ namespace TP4.Controllers
                 });
             }
 
+            ClientsVM.Reverse();
+
             return ClientsVM;
         }
     }

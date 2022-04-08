@@ -12,10 +12,11 @@ namespace TP4.ViewModels
         [DisplayName("Nom*")]
         public string Nom { get; set; }
 
-        [Required(ErrorMessage = "L'âge est requis")]
-        [Range(20, 75, ErrorMessage = "L'âge doit être entre 20 et 75 ans")]
         [DisplayName("Âge*")]
-        public int Age { get; set; }
+        [Required(ErrorMessage = "L'âge est requis")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Le champs doit contenir un nombre")]
+        [Range(20, 75, ErrorMessage = "L'âge doit être entre 20 et 75 ans")]
+        public string Age { get; set; }
 
         [DisplayName("Téléphone")]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Le format semble invalide")]
@@ -24,7 +25,7 @@ namespace TP4.ViewModels
         public string NumeroTelephone { get; set; }
 
         [Required(ErrorMessage = "Le courriel est requis")]
-        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-][\w-]*$", ErrorMessage = "Le champs doit contenir un email")]
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-][\w-]*$", ErrorMessage = "Le champ doit contenir un email")]
         [DisplayName("Courriel*")]
         public string Courriel { get; set; }
 

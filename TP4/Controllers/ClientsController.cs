@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TP4.Data;
@@ -56,7 +57,7 @@ namespace TP4.Controllers
                 {
                     ClientId = 0,
                     Nom = nouveauClient.Nom,
-                    Age = nouveauClient.Age,
+                    Age = Int32.Parse(nouveauClient.Age),
                     NoTelephone = nouveauClient.NumeroTelephone,
                     Courriel = nouveauClient.Courriel,
                     AbonnementId = (int)nouveauClient.TypeAbonnementId

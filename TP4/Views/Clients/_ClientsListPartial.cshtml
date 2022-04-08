@@ -8,7 +8,7 @@ else
 {
     @Html.AntiForgeryToken()
 
-    <table class="table table-striped">
+    <table class="table table-striped text-center table-bordered">
         <thead>
             <tr>
                 <th>
@@ -45,7 +45,15 @@ else
                         @Html.DisplayFor(modelItem => item.Courriel)
                     </td>
                     <td>
-                        @String.Format("{0:(###) ###-####}", Int64.Parse(item.NoTelephone))
+                        @if (!item.NoTelephone.Equals(""))
+                        {
+                            @String.Format("{0:(###) ###-####}", Int64.Parse(item.NoTelephone))
+                        }
+                        else
+                        {
+                            <span>-</span>
+                        }
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.TypeAbonnement)

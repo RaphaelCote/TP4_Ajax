@@ -1,7 +1,7 @@
 ﻿@model ClientCreateVM
 
 
-<form asp-controller="Clients" asp-action="Create" method="post" class="row g-3" id="formulaire">
+<form asp-controller="Clients" asp-action="Create" method="post" class="row" id="formulaire">
     <div class="col-md-4">
         <label asp-for="Nom" class="form-label"></label>
         <input asp-for="Nom" class="form-control" />
@@ -18,8 +18,9 @@
         <span asp-validation-for="NumeroTelephone" class="text-danger"></span>
     </div>
     <div class="col-md-4">
+
         <label asp-for="Courriel" class="form-label"></label>
-        <input asp-for="Courriel" class="form-control" />
+        <input asp-for="Courriel" class="form-control" asp-validation-for="Courriel" />
         <span asp-validation-for="Courriel" class="text-danger"></span>
     </div>
     <div class="col-md-4">
@@ -33,12 +34,11 @@
         <button type="button" class="btn btn-info" id="sauvegarder" onclick="creerClient(event)">Sauvegarder</button>
         <button class="btn btn-danger" onclick="annulerCreation()">Annuler</button>
     </div>
-
 </form>
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script src="~/js/site.js"></script>
+
 }
 

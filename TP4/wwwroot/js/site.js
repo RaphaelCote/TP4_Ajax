@@ -10,14 +10,16 @@ function afficherFormulaire() {
     let boutonCreer = document.getElementById("btnCreer");
     boutonCreer.disabled = true;
     let contenuFormulaire = document.getElementById("formulaireDiv");
-    
+   
     
     fetch("/Clients/Create").then(function (response) {
         if (response.ok) {
             response.text().then(function (data) {
                 contenuFormulaire.innerHTML = data;
             });
-        } 
+        } else {
+           contenuFormulaire.innerHTML = "Une erreur s'est produite.";
+        }
     });
 }
 
@@ -37,27 +39,27 @@ function creerClient(ev) {
     fetch("/Clients/Create/", {
         method: "POST",
 
-        /* Pour un envoi en JSON */
         contentType: "application/json; charset=utf-8",
-        body:jsonData, // JSON of the form
+        body:jsonData,
         headers: {
           "Content-Type": "application/json",
-          "RequestVerificationToken": csrfToken, //Envoyer le jeton CSRF avec la requête
+          "RequestVerificationToken": csrfToken, 
         },
         
     }).then(function (response) {
-
+        let contenuFormulaire = document.getElementById("formulaireDiv");
         if (response.status == 400) {
-            let contenuFormulaire = document.getElementById("formulaireDiv");
             response.text().then(function (data) {
                 contenuFormulaire.innerHTML = data;
             });
-        } else {
+        } else if (response.ok) {
             let contenuTableau = document.getElementById("clientsList");
             response.text().then(function (data) {
                 contenuTableau.innerHTML = data;
             });
             annulerCreation();
+        } else {
+            contenuFormulaire.innerHTML = "Une erreur s'est produite."
         }
         
     });
@@ -65,10 +67,10 @@ function creerClient(ev) {
 
 
 function deleteClient(clientId) {
-    console.log("Clicked !", event);
+ 
     let clientListDiv = document.getElementById("clientsList");
     let csrfToken = clientListDiv.querySelector('[name="__RequestVerificationToken"]').value;
-    console.log("CSRF : ", csrfToken)
+
 
     fetch("/clients/delete/" + clientId, {
         method: 'POST',
@@ -77,7 +79,7 @@ function deleteClient(clientId) {
             "RequestVerificationToken": csrfToken, 
         },
     }).then(res => {
-        console.log("Res : ", res);
+
         if (res.ok) {
             return res.text()
         }
